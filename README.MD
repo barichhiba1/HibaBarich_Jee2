@@ -22,6 +22,9 @@
 <h5> -supprimer un produit </h5>
 <img src="Captures/cap8.png">
 
+<h5> -H2 CONSOLE</h5>
+<img src="Captures/cap9.png">
+
 
 
 

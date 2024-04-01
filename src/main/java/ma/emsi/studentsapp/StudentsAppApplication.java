@@ -1,7 +1,7 @@
 package ma.emsi.studentsapp;
 
 import ma.emsi.studentsapp.entities.Product;
-import ma.emsi.studentsapp.repository.ProductRepository;
+import ma.emsi.studentsapp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -69,7 +69,8 @@ public class StudentsAppApplication implements CommandLineRunner {
 	}
 
 
-		// Gestion Hopital productRepository
+		
 
-	}
+
+}
 

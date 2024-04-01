@@ -30,5 +30,10 @@ public class StudentsAppApplication implements CommandLineRunner {
 		p.setPrice(500);
 		p.setQuantity(6);
 		productRepository.save(p);
+
+
+
+		// Gestion Hopital
+
 	}
 }

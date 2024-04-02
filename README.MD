@@ -20,17 +20,40 @@
 <h5> -Mettre à jour un produit </h5>
 <img src="Captures/cap7.png">
 <h5> -supprimer un produit </h5>
-<img src="Captures/cap8.png">
-
+<img src="Captures/cap8.png">6
 <h5> -H2 CONSOLE</h5>
 <img src="Captures/cap9.png">
 
+<hr>
+<h5>Partie 2 :</h5>
+<h5> -H2 CONSOLE</h5>
+< img src="Captures/cap10.png">
 
+<h5> -Les entités</h5>
 
+< img src="Captures/cap11.png">
+< img src="Captures/cap12.png">
+< img src="Captures/cap13.png">
+< img src="Captures/cap14.png">
+< img src="Captures/cap15.png">
 
+<h5> -Les repositories</h5>
+< img src="Captures/cap16.png">
+< img src="Captures/cap17.png">
+< img src="Captures/cap18.png">
+< img src="Captures/cap19.png">
+<h5> -Services</h5>
+< img src="Captures/cap20.png">
+< img src="Captures/cap21.png">
+< img src="Captures/cap22.png">
+<h5> -controleur</h5>
 
+< img src="Captures/cap23.png">
+<h5> -opérations de gestion d'hopital</h5>
 
-
+< img src="Captures/cap24.png">
+< img src="Captures/cap25.png">
+< img src="Captures/cap26.png">
 
 
 

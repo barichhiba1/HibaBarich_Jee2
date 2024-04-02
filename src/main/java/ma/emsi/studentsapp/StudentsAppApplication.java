@@ -1,14 +1,19 @@
 package ma.emsi.studentsapp;
 
-import ma.emsi.studentsapp.entities.Product;
+
+import jakarta.persistence.EntityManager;
+import ma.emsi.studentsapp.Service.HospitalServices;
+import ma.emsi.studentsapp.entities.*;
 import ma.emsi.studentsapp.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
+import java.util.Date;
 import java.util.List;
-
+import java.util.stream.Stream;
 @SpringBootApplication
 public class StudentsAppApplication implements CommandLineRunner {
 	@Autowired
@@ -67,10 +72,59 @@ public class StudentsAppApplication implements CommandLineRunner {
 
 
 	}
+	//Gestion Hopital :
+	@Bean // methode qui s'execute au demarrage et retourne un objet qui deveient un compposant spring
+	CommandLineRunner start(PatientRepos patient,
+							MedecinRepos med,
+							RdvRepos rd,
+							ConsultationRepos cr,HospitalServices hr) // Spring fait l'injection des dependances
+	{
+		return args ->
+		{
+			Stream.of("aya","Hiba","kawtar").forEach(name->{
+						hr.ajoutPatient(new Patient(null,name, new Date(),false,null));
+					}
+
+			);
+
+			//Medecin
+			Stream.of("sami","yasmine","naoufal").forEach(name->{
+						Medecin medecin= new Medecin();
+						medecin.setNom(name);
+						medecin.setSpecialite(Math.random()>0.5?"Cardio":"Generaliste");
+						medecin.setEmail(name+"@gmail.com");
+						hr.ajoutMed(medecin);
+
+					}
+
+			);
+
+			//Recherche
+			Patient p=patient.findById(1L).orElse(null);
+			Patient p2=patient.findByNom("aya");
+
+			Medecin m=med.findByNom("hiba");
+
+			//RDV
+			RendezVous rdv= new RendezVous();
+			rdv.setDate(new Date());
+			rdv.setStatus(statusRDV.Pending);
+			rdv.setPatient(p2);
+			rdv.setMedecin(m);
+			RendezVous savedRD =hr.ajoutRdv(rdv);
+			System.out.println("Rendez vous enregistré est : "+savedRD.getId());
 
 
-		
+			//Consultation
+			Consultation c= new Consultation();
+			c.setDateConsultation((rd.findById(1L).orElse(null).getDate()));
+			c.setRdv(rdv);
+			c.setRapport("Rapport de Consultation");
+			hr.ajoutConsultation(c);
 
+
+		};
+	}
 
 }
 
